@@ -4,9 +4,6 @@ MAINTAINER Alessandro Benedetti <alessandro.benedetti@molo17.com>
 # Realm Object Server will listen on that port 
 EXPOSE 9080
 
-# Realm Dashboard
-EXPOSE 8080
-
 # Following this guide, curl must be available to proceed with ROS setup
 # https://realm.io/docs/realm-object-server/#install-realm-object-server
 

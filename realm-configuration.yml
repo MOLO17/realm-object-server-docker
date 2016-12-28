@@ -116,10 +116,10 @@ proxy:
     ## The address/interface on which the HTTPS proxy module should listen. This defaults
     ## to 127.0.0.1. If you wish to listen on all available interfaces,
     ## uncomment the following line.
-    # listen_address: '0.0.0.0'
+    # listen_address: 
 
     ## The port that the HTTPS proxy module should bind to.
-    # listen_port: 9443
+    # listen_port: 
 
 ## ----------------------------------------------------------------------------
 
@@ -132,22 +132,22 @@ network:
     ## The address/interface on which the server should listen. This defaults
     ## to 127.0.0.1. If you wish to listen on all available interfaces,
     ## uncomment the following line.
-    listen_address: '0.0.0.0'
+    #listen_address: 
 
     ## The port on which to listen. The Realm sync server uses port 27800 by
     ## default. For most deployments, there should not be a need to change this.
-    listen_port: 7800
+    #listen_port: 
 
   http:
     ## The address/interface on which the server should listen for HTTP
     ## services. This includes Dashboard and Authentication APIs.
     ## This defaults to 127.0.0.1. If you wish to listen on all available
     ## interfaces, uncomment the following line.
-    listen_address: '0.0.0.0'
+    #listen_address: 
 
     ## The port on which to listen for incoming requests to the Dashboard
     ## and authentication APIs. This defaults to 27080.
-    listen_port: 8080
+    #listen_port: 
 
 ## ----------------------------------------------------------------------------
 
@@ -215,7 +215,7 @@ logging:
   ## The file to which the synchronisation server should log. This should
   ## be a writable path from the perspective of the user under which the
   ## server runs. If no path is specified, the server will log to stdout.
-  path: '/tmp/realm-sync.log'
+  # path: '/tmp/realm-sync.log'
 
 ## ----------------------------------------------------------------------------
 

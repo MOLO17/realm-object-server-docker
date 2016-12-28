@@ -12,18 +12,19 @@ fi
 echo "HERE"
 echo "Prepare realm start"
 
-# Force delete of files
+# If exists, delete sync folder
+rm -rf /var/realm/sync-services
+
+# # Recreatte sync folder
+mkdir -p /var/realm/sync-services
+
+# # Force delete of files
 rm -rf /realm-keys/id_rsa
 rm -rf /realm-keys/id_rsa.pub
 
-# Create key-pairs used by ROS
-ssh-keygen -q -t rsa -N '' -f /realm-keys/id_rsa
-
-ssh-keygen -f /realm-keys/id_rsa -e -m pem > /realm-keys/private_key.pem
-ssh-keygen -f /realm-keys/id_rsa.pub -e -m pem > /realm-keys/public_key.pem
-
-#openssl rsa -in /realm-keys/id_rsa -outform pem > /realm-keys/private_key.pem
-#openssl rsa -in /realm-keys/id_rsa.pub -outform pem > /realm-keys/public_key.pem
+# # Create key-pairs used by ROS
+openssl genrsa -out /realm-keys/private_key.pem 2048
+openssl rsa -in /realm-keys/private_key.pem -outform PEM -pubout -out /realm-keys/public_key.pem
 
 # Create Sync Service realm directory
 mkdir -p /var/realm/sync-services

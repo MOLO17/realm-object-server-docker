@@ -22,4 +22,4 @@ We also generate on the fly the required private and public keys, and we convert
 
 	docker run -d -v /path/to/your/config/folder:/etc/realm -v /path/to/your/keys/folder:/realm-keys -p 9080:9080 molo17srl/realm-object-server:latest /bin/bash
 
-*Private and public keys are always re-generated and they're stored to mounted volumes to be complaint with security standard rules.*
+*Private and public keys are always re-generated and they're stored to mounted volumes to be compliant with security standard rules.*
