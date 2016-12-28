@@ -20,10 +20,6 @@ We also generate on the fly the required private and public keys, and we convert
 	To start docker image, use the command below
 	replacing path with your properly values.
 
-	docker run -d \
-			-v /path/to/your/config/folder:/etc/realm \
-			-v /path/to/your/keys/folder:/realm-keys 
-			-p 9080:9080 \ 
-			molo17srl/realm-object-server:latest
+	docker run -d -v /path/to/your/config/folder:/etc/realm -v /path/to/your/keys/folder:/realm-keys -p 9080:9080 molo17srl/realm-object-server:latest /bin/bash
 
 *Private and public keys are always re-generated and they're stored to mounted volumes to be complaint with security standard rules.*
