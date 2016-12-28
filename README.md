@@ -8,10 +8,6 @@ ROS requires private and public key to startup, and a valid configuration file.
 With this image we are providing a basic configuration file, which will be used in case you don't provide anything. 
 We also generate on the fly the required private and public keys, and we convert them to the PEM format so Realm can use them properly. 
 
-___
-***Tested with RancherOS, works succesfully behind Load Balancer which expose port 9080 to the world (or just access the 9080 via container address).***
-___
-
 ## Volumes
 
 	This image requires you to mount essentially two volumes:
@@ -35,6 +31,10 @@ ___
 
 
 ## RancherOS Configurations
+***Tested with RancherOS, works succesfully behind Load Balancer which expose port 9080 to the world (or just access the 9080 via container address).***
+
+___
+
 ***docker-compose.yml***
 <pre><code>realm-object-storage-elb:
   ports:
@@ -53,6 +53,8 @@ realm-object-storage:
   - /var/realm:/etc/realm
   - /var/realm-keys:/realm-keys
   stdin_open: true</code></pre>
+
+___
 ***rancher-compose.yml***
 <pre><code>realm-object-storage-elb:
   scale: 1
