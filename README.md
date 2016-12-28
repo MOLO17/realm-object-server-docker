@@ -32,3 +32,37 @@ ___
 - [ ] Add environment variable to force delete of keys and configuration
 - [ ] Insert envsubst or rb script to replace variables inside yml file
 - [ ] Add environment variables to replace content of realm-configuration.yml
+
+
+## RancherOS Configurations
+***docker-compose.yml***
+<pre><code>realm-object-storage-elb:
+  ports:
+  - 9080:9080
+  tty: true
+  image: rancher/load-balancer-service
+  stdin_open: true
+realm-object-storage:
+  ports:
+  - 9080:9080/tcp
+  labels:
+    io.rancher.container.pull_image: always
+  tty: true
+  image: molo17srl/realm-object-server:latest
+  volumes:
+  - /var/realm:/etc/realm
+  - /var/realm-keys:/realm-keys
+  stdin_open: true</code></pre>
+***rancher-compose.yml***
+<pre><code>realm-object-storage-elb:
+  scale: 1
+  load_balancer_config:
+    haproxy_config: {}
+  health_check:
+    port: 42
+    interval: 2000
+    unhealthy_threshold: 3
+    healthy_threshold: 2
+    response_timeout: 2000
+realm-object-storage:
+  scale: 1</code></pre>
