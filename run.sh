@@ -19,8 +19,8 @@ rm -rf /var/realm/sync-services
 mkdir -p /var/realm/sync-services
 
 # # Force delete of files
-rm -rf /realm-keys/id_rsa
-rm -rf /realm-keys/id_rsa.pub
+rm -rf /realm-keys/private_key.pem
+rm -rf /realm-keys/public_key.pem
 
 # # Create key-pairs used by ROS
 openssl genrsa -out /realm-keys/private_key.pem 2048
